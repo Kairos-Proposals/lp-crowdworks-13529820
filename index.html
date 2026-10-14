@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kairosからのご提案 | たからべ様 飲食店ランディングページ制作</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sumi: #1F242B;
+    --ai: #2C4154;
+    --kohaku: #D98E3B;
+    --shu: #A8432E;
+    --washi: #F6F0E4;
+    --washi-deep: #EDE3D0;
+    --cream-text: #FAF5EA;
+  }
+
+  *{box-sizing:border-box; margin:0; padding:0;}
+
+  html{scroll-behavior:smooth;}
+
+  body{
+    font-family:'Noto Sans JP', sans-serif;
+    color:var(--sumi);
+    background:var(--washi);
+    line-height:1.85;
+    font-weight:300;
+    overflow-x:hidden;
+  }
+
+  h1,h2,h3,h4{
+    font-family:'Shippori Mincho', serif;
+    font-weight:800;
+    letter-spacing:0.04em;
+  }
+
+  .wrap{
+    max-width:1040px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  /* ============ HERO ============ */
+  .hero{
+    position:relative;
+    min-height:100vh;
+    background:
+      radial-gradient(circle at 78% 22%, rgba(217,142,59,0.55) 0%, rgba(217,142,59,0.08) 32%, transparent 55%),
+      radial-gradient(circle at 15% 85%, rgba(168,67,46,0.35) 0%, transparent 45%),
+      linear-gradient(160deg, var(--sumi) 0%, var(--ai) 65%, #1b2b38 100%);
+    color:var(--cream-text);
+    display:flex;
+    align-items:center;
+    padding:120px 0 80px;
+    overflow:hidden;
+  }
+
+  .hero::before{
+    content:"";
+    position:absolute;
+    top:0; bottom:0; left:50%;
+    width:1px;
+    background:linear-gradient(to bottom, transparent, rgba(217,142,59,0.4), transparent);
+    opacity:0.5;
+  }
+
+  .hero .noren{
+    position:absolute;
+    top:0;
+    right:8%;
+    display:flex;
+    gap:14px;
+    height:160px;
+  }
+  .hero .noren span{
+    width:3px;
+    height:100%;
+    background:linear-gradient(to bottom, var(--kohaku), transparent);
+    opacity:0.5;
+  }
+
+  .hero-inner{
+    position:relative;
+    z-index:2;
+  }
+
+  .eyebrow{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    font-size:12px;
+    letter-spacing:0.25em;
+    color:var(--kohaku);
+    border:1px solid rgba(217,142,59,0.5);
+    padding:8px 18px;
+    border-radius:999px;
+    margin-bottom:32px;
+  }
+  .eyebrow::before{
+    content:"";
+    width:6px;
+    height:6px;
+    border-radius:50%;
+    background:var(--kohaku);
+    box-shadow:0 0 10px 2px rgba(217,142,59,0.8);
+  }
+
+  .hero h1{
+    font-size:clamp(32px, 5.4vw, 58px);
+    line-height:1.5;
+    margin-bottom:28px;
+  }
+  .hero h1 .accent{
+    color:var(--kohaku);
+  }
+
+  .hero p.lead{
+    font-size:16px;
+    max-width:560px;
+    color:rgba(250,245,234,0.82);
+    margin-bottom:46px;
+    font-weight:300;
+  }
+
+  .hero-foot{
+    display:flex;
+    gap:40px;
+    flex-wrap:wrap;
+    font-size:13px;
+    color:rgba(250,245,234,0.65);
+    letter-spacing:0.08em;
+  }
+  .hero-foot strong{
+    display:block;
+    color:var(--cream-text);
+    font-family:'Shippori Mincho', serif;
+    font-size:18px;
+    font-weight:600;
+    margin-bottom:4px;
+  }
+
+  /* ============ SECTION COMMON ============ */
+  section{
+    padding:96px 0;
+    position:relative;
+  }
+
+  .tag{
+    display:inline-block;
+    font-size:12px;
+    letter-spacing:0.3em;
+    color:var(--shu);
+    font-weight:500;
+    margin-bottom:18px;
+  }
+
+  .sec-title{
+    font-size:clamp(24px, 3.4vw, 34px);
+    margin-bottom:28px;
+    color:var(--sumi);
+  }
+
+  /* ============ UNDERSTANDING ============ */
+  .understand{
+    background:var(--washi-deep);
+    position:relative;
+  }
+  .understand::after{
+    content:"";
+    position:absolute;
+    left:0; top:0; bottom:0;
+    width:6px;
+    background:linear-gradient(to bottom, var(--shu), var(--kohaku));
+  }
+
+  .understand-grid{
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:60px;
+    align-items:start;
+  }
+
+  .understand p{
+    font-size:15.5px;
+    margin-bottom:18px;
+    color:#3a3a38;
+  }
+
+  .voice-card{
+    background:var(--sumi);
+    color:var(--cream-text);
+    padding:34px 32px;
+    border-radius:4px;
+    position:relative;
+  }
+  .voice-card::before{
+    content:"“";
+    font-family:'Shippori Mincho', serif;
+    font-size:70px;
+    color:var(--kohaku);
+    position:absolute;
+    top:-10px;
+    left:20px;
+    opacity:0.6;
+  }
+  .voice-card p{
+    font-size:14.5px;
+    color:rgba(250,245,234,0.9);
+    position:relative;
+    z-index:1;
+    margin-bottom:14px;
+  }
+  .voice-card .signature{
+    font-size:12px;
+    letter-spacing:0.15em;
+    color:var(--kohaku);
+    margin-top:10px;
+  }
+
+  /* ============ VALUE CARDS ============ */
+  .value-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:28px;
+    margin-top:40px;
+  }
+
+  .value-card{
+    background:#fff;
+    border:1px solid rgba(44,65,84,0.1);
+    padding:34px 28px;
+    border-radius:6px;
+    position:relative;
+    transition:transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .value-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 18px 40px -20px rgba(44,65,84,0.35);
+  }
+
+  .value-num{
+    font-family:'Shippori Mincho', serif;
+    font-size:13px;
+    color:var(--kohaku);
+    letter-spacing:0.2em;
+    margin-bottom:16px;
+    display:block;
+  }
+
+  .value-icon{
+    width:46px;
+    height:46px;
+    border-radius:50%;
+    background:linear-gradient(135deg, var(--ai), var(--sumi));
+    margin-bottom:20px;
+    position:relative;
+  }
+  .value-icon::after{
+    content:"";
+    position:absolute;
+    inset:12px;
+    border-radius:50%;
+    background:var(--kohaku);
+    opacity:0.85;
+  }
+
+  .value-card h3{
+    font-size:18px;
+    margin-bottom:12px;
+    color:var(--sumi);
+  }
+  .value-card p{
+    font-size:14px;
+    color:#56534c;
+  }
+
+  /* ============ FLOW ============ */
+  .flow{
+    background:linear-gradient(180deg, var(--sumi) 0%, #222a33 100%);
+    color:var(--cream-text);
+  }
+  .flow .sec-title, .flow .tag{
+    color:var(--cream-text);
+  }
+  .flow .tag{ color:var(--kohaku); }
+
+  .timeline{
+    margin-top:50px;
+    position:relative;
+    padding-left:40px;
+  }
+  .timeline::before{
+    content:"";
+    position:absolute;
+    left:11px; top:6px; bottom:6px;
+    width:1px;
+    background:linear-gradient(to bottom, var(--kohaku), rgba(217,142,59,0.1));
+  }
+
+  .step{
+    position:relative;
+    padding-bottom:46px;
+  }
+  .step:last-child{ padding-bottom:0; }
+
+  .step::before{
+    content:"";
+    position:absolute;
+    left:-40px;
+    top:4px;
+    width:22px; height:22px;
+    border-radius:50%;
+    background:var(--sumi);
+    border:2px solid var(--kohaku);
+  }
+
+  .step .step-label{
+    font-size:12px;
+    letter-spacing:0.2em;
+    color:var(--kohaku);
+    margin-bottom:8px;
+  }
+  .step h4{
+    font-size:19px;
+    margin-bottom:8px;
+    color:var(--cream-text);
+  }
+  .step p{
+    font-size:14px;
+    color:rgba(250,245,234,0.72);
+    max-width:520px;
+  }
+
+  /* ============ CLOSING ============ */
+  .closing{
+    background:
+      radial-gradient(circle at 20% 20%, rgba(217,142,59,0.18), transparent 55%),
+      var(--washi);
+    text-align:center;
+    padding:110px 0 120px;
+  }
+
+  .closing .tag{ text-align:center; display:block; }
+
+  .closing h2{
+    font-size:clamp(26px, 4vw, 40px);
+    margin-bottom:20px;
+    color:var(--sumi);
+  }
+
+  .closing p.desc{
+    max-width:520px;
+    margin:0 auto 42px;
+    color:#514e46;
+    font-size:15px;
+  }
+
+  .cta-box{
+    display:inline-flex;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+  }
+
+  .btn{
+    display:inline-block;
+    background:linear-gradient(120deg, var(--shu), var(--kohaku));
+    color:#fff;
+    font-family:'Shippori Mincho', serif;
+    font-size:16px;
+    letter-spacing:0.1em;
+    padding:18px 54px;
+    border-radius:3px;
+    text-decoration:none;
+    box-shadow:0 14px 30px -12px rgba(168,67,46,0.6);
+    transition:transform 0.25s ease;
+  }
+  .btn:hover{ transform:translateY(-3px); }
+
+  .cta-note{
+    font-size:12px;
+    letter-spacing:0.1em;
+    color:#8a8578;
+  }
+
+  footer{
+    background:var(--sumi);
+    color:rgba(250,245,234,0.5);
+    text-align:center;
+    padding:30px 0;
+    font-size:12px;
+    letter-spacing:0.15em;
+  }
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width:860px){
+    .understand-grid{
+      grid-template-columns:1fr;
+      gap:36px;
+    }
+    .value-grid{
+      grid-template-columns:1fr 1fr;
+    }
+  }
+
+  @media (max-width:600px){
+    section{ padding:70px 0; }
+    .hero{ padding:100px 0 60px; min-height:auto; }
+    .hero-foot{ gap:24px; }
+    .value-grid{ grid-template-columns:1fr; }
+    .hero .noren{ display:none; }
+    .understand::after{ width:4px; }
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="noren">
+    <span></span><span></span><span></span><span></span>
+  </div>
+  <div class="wrap hero-inner">
+    <div class="eyebrow">KAIROS PROPOSAL — FOR たからべ 様</div>
+    <h1>一皿の向こうにある物語を、<br>画面の中に灯す。<span class="accent">それが、お店のLPです。</span></h1>
+    <p class="lead">
+      飲食店のランディングページは、メニュー表ではありません。
+      扉を開ける前の「行ってみたい」という気持ちを作る、最初の一皿です。
+      Kairosより、たからべ様のお店の魅力をそのまま伝えるご提案です。
+    </p>
+    <div class="hero-foot">
+      <div>
+        <strong>¥10,000〜30,000</strong>
+        ご予算想定の制作プラン
+      </div>
+      <div>
+        <strong>スマホ最適化</strong>
+        来店導線を止めない設計
+      </div>
+      <div>
+        <strong>相談しながら</strong>
+        丁寧な制作プロセス
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="understand">
+  <div class="wrap understand-grid">
+    <div>
+      <span class="tag">YOUR REQUEST / 募集内容の理解</span>
+      <h2 class="sec-title">「見やすく、わかりやすく、<br>お店らしさが伝わるページ」</h2>
+      <p>
+        今回の募集内容を拝見し、たからべ様が大切にされているのは
+        「とにかく派手なデザイン」ではなく、お店の雰囲気や魅力が
+        自然と伝わる、誠実なページづくりだと感じました。
+      </p>
+      <p>
+        素材や情報を共有しながら、構成やデザインを一緒に相談して進めたい
+        というご要望も、とても大切なポイントだと受け止めています。
+        一方的に納品するのではなく、対話を重ねながら形にしていく進め方を、
+        Kairosも同じように大切にしています。
+      </p>
+      <p>
+        スマホでの見やすさ、軽微な修正への対応、そして長くお付き合いできる
+        関係性――飲食店という「生きたお店」に寄り添うページだからこそ、
+        作って終わりではない制作をご提案します。
+      </p>
+    </div>
+    <div class="voice-card">
+      <p>
+        「お店の魅力や雰囲気が伝わるような、見やすくわかりやすいページを
+        作っていただきたい」
+      </p>
+      <p>
+        「デザインから制作までご相談しながら進めていただける方を希望」
+      </p>
+      <div class="signature">— 募集内容より</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="tag">WHAT WE OFFER / Kairosがご提供できること</span>
+    <h2 class="sec-title">小さなご予算でも、<br>手を抜かない制作を。</h2>
+
+    <div class="value-grid">
+      <div class="value-card">
+        <span class="value-num">01</span>
+        <div class="value-icon"></div>
+        <h3>雰囲気が伝わるデザイン</h3>
+        <p>お店の業態・客層・世界観をヒアリングし、写真や文章が映えるレイアウトと配色をご提案します。</p>
+      </div>
+      <div class="value-card">
+        <span class="value-num">02</span>
+        <div class="value-icon"></div>
+        <h3>相談しながら進める制作</h3>
+        <p>一方的な納品ではなく、構成案・デザイン案の段階からご確認いただきながら、すり合わせて形にします。</p>
+      </div>
+      <div class="value-card">
+        <span class="value-num">03</span>
+        <div class="value-icon"></div>
+        <h3>スマホでも迷わない設計</h3>
+        <p>来店前の多くのお客様が見るのはスマホ画面。指の動きに合わせた読みやすいレイアウトを徹底します。</p>
+      </div>
+      <div class="value-card">
+        <span class="value-num">04</span>
+        <div class="value-icon"></div>
+        <h3>素材が揃っていなくても相談OK</h3>
+        <p>写真や文章が不足している場合も、ご用意いただける範囲から一緒に方向性を組み立てていきます。</p>
+      </div>
+      <div class="value-card">
+        <span class="value-num">05</span>
+        <div class="value-icon"></div>
+        <h3>公開後の軽微な修正対応</h3>
+        <p>メニュー変更や営業時間の更新など、公開後に起こりがちな細かな修正にも柔軟に対応します。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="flow">
+  <div class="wrap">
+    <span class="tag">HOW WE WORK / 進め方のイメージ</span>
+    <h2 class="sec-title">ご相談から公開まで、<br>無理のないステップで。</h2>
+
+    <div class="timeline">
+      <div class="step">
+        <div class="step-label">STEP 01</div>
+        <h4>ヒアリング・ご相談</h4>
+        <p>お店の雰囲気、伝えたいメニューや強み、ご予算感を確認させていただきます。素材の有無もここで整理します。</p>
+      </div>
+      <div class="step">
+        <div class="step-label">STEP 02</div>
+        <h4>構成・デザインのご提案</h4>
+        <p>ページの流れとデザインの方向性をご提示し、イメージをすり合わせます。ここで雰囲気をしっかり固めます。</p>
+      </div>
+      <div class="step">
+        <div class="step-label">STEP 03</div>
+        <h4>制作・スマホ最適化</h4>
+        <p>デザインをもとに実際のページを制作。スマホ・PC両方での見え方を確認しながら仕上げます。</p>
+      </div>
+      <div class="step">
+        <div class="step-label">STEP 04</div>
+        <h4>ご確認・軽微な調整</h4>
+        <p>完成したページをご確認いただき、文言や細部の調整を行います。</p>
+      </div>
+      <div class="step">
+        <div class="step-label">STEP 05</div>
+        <h4>公開・その後のサポート</h4>
+        <p>公開後も、メニュー更新などの軽微な修正にご相談いただけます。長くお付き合いできる関係を大切にします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="closing">
+  <div class="wrap">
+    <span class="tag">NEXT STEP</span>
+    <h2>まずは、お店のお話を<br>聞かせてください。</h2>
+    <p class="desc">
+      たからべ様のお店の魅力を、画面の向こうのお客様に伝えるページを
+      一緒に作らせてください。ご相談ベースからで構いません。
+      どうぞお気軽にメッセージをお送りください。
+    </p>
+    <div class="cta-box">
+      <a href="#" class="btn">Kairosに相談してみる</a>
+      <span class="cta-note">自己紹介・実績・お見積もりをご返信いたします</span>
+    </div>
+  </div>
+</section>
+
+<footer>
+  KAIROS — Web制作・システム開発チーム
+</footer>
+
+</body>
+</html>
